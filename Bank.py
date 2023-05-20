@@ -12,7 +12,7 @@ class Bank:
     def createAccount(self, get_ID, accountName, firstDeposit, Password):
         hash_password = get_password(Password)
         print(hash_password)
-        oAccount = Account(get_ID, accountName, firstDeposit, Password)
+        oAccount = Account(get_ID, accountName, firstDeposit, hash_password)
         Bank_DB = connectDB('Account.db')
         Bank_DB.createTable('BankAccount')
         Bank_DB.CreateAccount(oAccount)
@@ -61,7 +61,7 @@ class Bank:
 
     def withdrawAccount(self):
         BankDB = connectDB('Account.db')
-        print(" * * * A C C 0 U N T  D E P 0 S ! T * * * ")
+        print(" * * * A C C 0 U N T   W ! T H D R A W * * * ")
         print()
         inputID = int(input("Enter account ID: "))
         inputName = input("Enter account Name: ")

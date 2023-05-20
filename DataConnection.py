@@ -9,7 +9,6 @@ class connectDB:
     def __init__(self, dbName):
         self.dbName = dbName
         _path = os.getcwd() + '/db/%s'%self.dbName # '/home/kakashi/PycharmProjects/pythonProject/BankProject' % self.dbName
-        print(_path)
         self.conn = sqlite3.connect(_path)
         self.c = self.conn.cursor()
 
