@@ -6,6 +6,10 @@ from account import Account
 
 
 class Bank:
+    # business transaction
+    #   merchant system, payroll system
+    # business loan -> 145
+    #
     def __init__(self):
         pass
 
@@ -48,7 +52,7 @@ class Bank:
             myBalance = BankDB.getBalance(inputID)
             print("my balance: %d" %myBalance)
             userAcc = Account(inputID, inputName, myBalance)
-            tt_balance = userAcc.Deposit(depositAmount)
+            tt_balance = userAcc.Deposits(depositAmount)
             print(tt_balance)
             print(userAcc.Balance)
             BankDB.UpdateBalance(userAcc)
@@ -70,7 +74,7 @@ class Bank:
             myBalance = BankDB.getBalance(inputID)
             print("my balance: %d" % myBalance)
             userAcc = Account(inputID, inputName, myBalance)
-            tt_balance = userAcc.Withdraw(withdrawAmount)
+            tt_balance = userAcc.Withdrawals(withdrawAmount)
             print(tt_balance, userAcc.Balance)
             BankDB.UpdateBalance(userAcc)
         else:
@@ -127,6 +131,30 @@ def Selection(opt):
     elif opt == '4':
         AYA.closeAccount()
     elif opt == '5':
+        AYA.__str__()
+    elif opt == '6':
         AYA.transactionAccount()
     elif opt == 'q':
         quit()
+
+
+
+class Manager:
+    pass
+
+class Loan:
+    # type of loans, annual interest, valid term
+    pass
+
+
+class ShortTeam(Loan):
+    '''
+    10 % , 1 yr
+    '''
+    pass
+
+
+class LongTeam(Loan):
+    '''
+    10 % , 1yr
+    '''
